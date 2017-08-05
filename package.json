@@ -12,9 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
-    "connect": "^3.5.0",
+    "connect": "^3.6.3",
     "connect-busboy": "0.0.2",
     "express": "^4.15.3",
+    "fs": "0.0.1-security",
     "jquery": "^3.1.1",
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
