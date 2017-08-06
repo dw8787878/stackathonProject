@@ -1,47 +1,48 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>WebcamJS Test Page</title>
-	<style type="text/css">
-		body { font-family: Helvetica, sans-serif; }
-		h2, h3 { margin-top:0; }
-		form { margin-top: 15px; }
-		form > input { margin-right: 15px; }
-		#results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
-	</style>
+  <meta charset="UTF-8">
+  <title>Layout like app with JpegCamera</title>
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" rel="stylesheet" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="styles/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<script src="../webcam.js"></script>
+  <header class="insta-bkg">
+    <h1>Snap O Gram</h1>
+  </header>
+  <div class="container page-wrap">
+    <div class="row col-lg-5 col-md-5 col-sm-5" id="camera-wrapper">
+      <div id="camera-wrapper">
+        <div class="camera" id="camera"></div>
+      </div>
+      <button class="btn btn-lg btn-primary trigger" id="shoot">Shoot</button>
+    </div>
+    <div class="row col-lg-7 col-md-7 col-sm-7">
+      <!--<h2 class="section-header">Layouts <small>(click on the layout to download the image)</small></h2>
+      <div class="layouts" id="layout-options">
+        <small>You Layouts will appear here</small>
+      </div>-->
+      <h2 class="section-header">Photos</h2>
+      <div class="gallery" id="gallery">
+        <small>Your photos will appear here</small>
+      </div>
+    </div>
+  </div>
+  <footer class="insta-bkg">
 
-	<div id="my_camera" style="width:320px; height:240px;"></div>
-	<div id="my_result"></div>
-    <form>
-	    <input type=button class="btn btn-success" value="Take Snapshot" onClick="take_snapshot()">
-    </form>
-
-	<script language="JavaScript">
-		Webcam.attach( '#my_camera' );
-
-        //uploads the picture taken from take_snapshot
-        // function SaveSnap(){
-        //     document.getElementById("loading").innerHTML="Saving, please wait...";
-        //     var file = document.getElementById("base64image").src;
-        //     var formdata = new FormData();
-        //     formdata.append("base64image", file);
-        //     var
-        // }
-
-		function take_snapshot() {
-			Webcam.snap( function(data_uri) {
-                document.getElementById('my_result').innerHTML =
-                    '<h2>Here is your image:</h2>' +
-                    '<img src='+data_uri+'"/>';
-                Webcam.upload( data_uri, '/upload');
-				document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
-			} );
-		}
-	</script>
+  </footer>
+  <script type="text/javascript" src="js/libs/jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="js/libs/jpeg_camera/jpeg_camera_with_dependencies.min.js"></script>
+  <script type="text/javascript" src="js/src/custom.js"></script>
+  <script type="text/javascript" src="js/src/layouts.js"></script>
+  <script type="text/javascript" src="js/src/app.js"></script>
+  <script type="text/javascript">
+    (function() {
+      LayoutApp.init();
+    })();
+  </script>
 </body>
 </html>
