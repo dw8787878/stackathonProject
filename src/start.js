@@ -20,7 +20,6 @@ module.exports = app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(express.static(resolve(__dirname, '..', 'src'))) // Serve static files from ../public
-  .use(busboy())
   .use('/', require('./api')) // Serve our api
   .get('/*', (_, res) => res.sendFile(resolve(__dirname, '..', 'src', 'index.html'))) // Send index.html for any other requests.
 
