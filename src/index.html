@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Layout like app with JpegCamera</title>
+  <title>Darryn's Stackathon Project</title>
   <!-- Latest compiled and minified CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" rel="stylesheet" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    rel="stylesheet" crossorigin="anonymous">
   <link href='https://fonts.googleapis.com/css?family=Oxygen:700,400' rel='stylesheet' type='text/css'>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="styles/styles.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
   <header class="insta-bkg">
-    <h1>Snap O Gram</h1>
+    <h1>Snapogram... go ahead, take a selfie!</h1>
+    <h2>Directions:  Go to URL: 192<b>.</b>168<b>.</b>1<b>.</b>14<b>:</b>8080</h2>
   </header>
-  <div class="container page-wrap">
-    <div class="row col-lg-5 col-md-5 col-sm-5" id="camera-wrapper">
+
+  <center>
       <div id="camera-wrapper">
         <div class="camera" id="camera"></div>
-      </div>
-      <button class="btn btn-lg btn-primary trigger" id="shoot">Shoot</button>
-    </div>
-    <div class="row col-lg-7 col-md-7 col-sm-7">
-      <!--<h2 class="section-header">Layouts <small>(click on the layout to download the image)</small></h2>
-      <div class="layouts" id="layout-options">
-        <small>You Layouts will appear here</small>
-      </div>-->
-      <h2 class="section-header">Photos</h2>
-      <div class="gallery" id="gallery">
-        <small>Your photos will appear here</small>
-      </div>
-    </div>
-  </div>
-  <footer class="insta-bkg">
 
-  </footer>
+      <button class="btn btn-lg btn-primary trigger" id="shoot" style="margin-bottom:4px;white-space: normal;">Shoot & Send</button>
+      </div>
+  </center>
+
   <script type="text/javascript" src="js/libs/jquery-1.12.1.min.js"></script>
   <script type="text/javascript" src="js/libs/jpeg_camera/jpeg_camera_with_dependencies.min.js"></script>
   <script type="text/javascript" src="js/src/custom.js"></script>
   <script type="text/javascript" src="js/src/layouts.js"></script>
   <script type="text/javascript" src="js/src/app.js"></script>
   <script type="text/javascript">
-    (function() {
+    (function () {
       LayoutApp.init();
     })();
   </script>
+
 </body>
 </html>
