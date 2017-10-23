@@ -40,8 +40,10 @@ if (module === require.main) {
   const server = app.listen(
     process.env.PORT || 8080,
     () => {
+      let { address, port } = server.address()
+      address = address === '::' ? 'localhost' : address
       console.log(`--- Started HTTP Server for ${pkg.name} ---`)
-      console.log(`Listening on ${JSON.stringify(server.address())}`)
+      console.log(`Listening on http://${address}:${port}`)
     }
   )
 }
